@@ -5,7 +5,7 @@ using Microsoft.JSInterop;
 using VSSyncfusionBlazor.Client;
 
 //Register Syncfusion license https://help.syncfusion.com/common/essential-studio/licensing/how-to-generate
-Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzI1Mjc1MkAzMjM1MmUzMDJlMzBWZ2N4R2RuSmpNM2tyN21zUU1DYjFiandjL29VdW9KakxWbGRKcllLSzJJPQ==");
+//Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzI1Mjc1MkAzMjM1MmUzMDJlMzBWZ2N4R2RuSmpNM2tyN21zUU1DYjFiandjL29VdW9KakxWbGRKcllLSzJJPQ==");
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.Services.AddSyncfusionBlazor();
             builder.Services.AddSingleton(typeof(ISyncfusionStringLocalizer), typeof(SyncfusionLocalizer));
@@ -25,4 +25,10 @@ builder.Services.AddSyncfusionBlazor();
                             CultureInfo.DefaultThreadCurrentCulture = culture;
                             CultureInfo.DefaultThreadCurrentUICulture = culture;
                         }
+
+//builder.Services.AddOidcAuthentication(OptionsBuilderExtensions =>
+//{
+//    builder.Configuration.Bind("google", options.ProviderOptions);
+//});
+
 await builder.Build().RunAsync();
